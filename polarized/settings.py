@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     # Other apps
     'common',
     'accounts',
+    'subjects',
 ]
 
 MIDDLEWARE = [
