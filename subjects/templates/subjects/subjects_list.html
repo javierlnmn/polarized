@@ -8,8 +8,11 @@
     <div id="subjects" class="flex flex-col gap-10 w-full">
 
         {% for subject in page_obj %}
-        <div class="subject">
-            {% include 'subjects/components/subject_voting_item.html' %}
+        <div class="subject animation-fade-in">
+            <div id="subject-{{ subject.id }}" class="flex flex-col items-center gap-3 lobster-regular">
+                <h4 class="text-3xl font-bold text-gray-800">{{ subject.name }}</h4>
+                {% include 'subjects/components/subject_voting_item.html' %}
+            </div>
     
             {% if page_obj.has_next and forloop.revcounter == 2 %}
             <span

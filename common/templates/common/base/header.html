@@ -6,7 +6,7 @@
             <span class="text-red-500">Polar</span><span class="text-sky-500">ized!</span>
         </p>
 
-        <div x-data="{ openProfile: false }" class="relative">
+        <div x-data="{ openProfile: false }" class="relative z-20">
 
             {% if not request.user.is_authenticated %}
                 {% include 'common/components/google_sign_in_button.html' %}
