@@ -22,7 +22,6 @@ class SubjectListView(ListView):
         return context
 
 
-
 class VotingView(View):
 
     def post(self, request, subject_id):
@@ -53,6 +52,23 @@ class VotingView(View):
         
         subject.user_voted = True
 
+        return render(request, 'subjects/components/subject_voting_item.html', {
+            'subject': subject,
+        })
+
+    def delete(self, request, subject_id):
+        if not request.user.is_authenticated:
+            return HttpResponse(status=401)
+
+        subject = get_object_or_404(Subject, id=subject_id)
+
+        vote = Vote.objects.filter(subject=subject, user=request.user).first()
+        if not vote:
+            return HttpResponse(status=404)
+        
+        vote.delete()
+        subject.user_voted = False
+        
         return render(request, 'subjects/components/subject_voting_item.html', {
             'subject': subject,
         })
