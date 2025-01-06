@@ -209,9 +209,9 @@ JET_THEMES = [
 
 
 # Accounts redirect urls
-LOGIN_REDIRECT_URL = "common:index"
+LOGIN_REDIRECT_URL = "subjects:subjects_list"
 LOGIN_URL = "accounts:login"
-LOGOUT_REDIRECT_URL = "common:index"
+LOGOUT_REDIRECT_URL = "subjects:subjects_list"
 LOGOUT_URL = "accounts:logout"
 
 

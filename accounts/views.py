@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import login
@@ -36,4 +36,4 @@ def google_auth_receiver(request):
 
     login(request, user)
 
-    return redirect('common:index')
+    return redirect('subjects:subjects_list')
