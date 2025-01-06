@@ -9,7 +9,7 @@
                 width: 0%;
             }
             to {
-                width: {{result_data.left}};
+                width: {{subject.result.left}};
             }
         }
 
@@ -22,11 +22,10 @@
                 width: 0%;
             }
             to {
-                width: {{result_data.right}};
+                width: {{subject.result.right}};
             }
         }
     </style>
-    
     <div class="h-full w-full bg-white flex justify-between gap-0 relative">
         <span
             {% if request.user.is_authenticated %}
@@ -38,18 +37,20 @@
             {% else %}
             data-sign-in-modal
             {% endif %}
-            class="absolute top-1/2 -translate-y-1/2 left-6 {% if not voted %}text-gray-700{% else %}text-white{% endif %} text-5xl hover:scale-110 transition-all duration-300 cursor-pointer"
+            class="absolute top-1/2 -translate-y-1/2 left-6 {% if not subject.user_voted %}text-gray-700{% else %}text-white{% endif %} text-5xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
-            {% if not voted %}
+            {% if not subject.user_voted %}
                 Left
             {% else %}
-                {{ result_data.left }}
+                {{ subject.result.left }}
             {% endif %}
         </span>
 
+        {% if subject.user_voted %}
         <span class="place-self-start h-full bg-red-500 animate-width-{{subject.id}}-left"></span>
 
         <span class="place-self-end h-full bg-sky-500 animate-width-{{subject.id}}-right"></span>
+        {% endif %}
 
         <span
             {% if request.user.is_authenticated %}
@@ -61,12 +62,12 @@
             {% else %}
             data-sign-in-modal
             {% endif %}
-            class="absolute top-1/2 -translate-y-1/2 right-6 {% if not voted %}text-gray-700{% else %}text-white{% endif %} text-5xl hover:scale-110 transition-all duration-300 cursor-pointer"
+            class="absolute top-1/2 -translate-y-1/2 right-6 {% if not subject.user_voted %}text-gray-700{% else %}text-white{% endif %} text-5xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
-        {% if not voted %}
+        {% if not subject.user_voted %}
             Right
         {% else %}
-            {{ result_data.right }}
+            {{ subject.result.right }}
         {% endif %}
         </span>
     </div>

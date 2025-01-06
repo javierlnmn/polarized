@@ -10,6 +10,18 @@ class SubjectListView(ListView):
     template_name = 'subjects/subjects_list.html'
     paginate_by = 5
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        if self.request.user.is_authenticated:
+            user_votes = Vote.objects.filter(user=self.request.user)
+
+            for subject in context['page_obj']:
+                subject.user_voted = user_votes.filter(subject=subject).count() > 0
+
+        return context
+
+
 
 class VotingView(View):
 
@@ -38,9 +50,9 @@ class VotingView(View):
         if not created and vote.value != vote_value:
             vote.value = vote_value
             vote.save()
+        
+        subject.user_voted = True
 
         return render(request, 'subjects/components/subject_voting_item.html', {
             'subject': subject,
-            'voted': True,
-            'result_data': subject.result,
         })
