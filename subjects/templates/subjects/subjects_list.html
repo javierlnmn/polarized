@@ -7,10 +7,32 @@
 
     <div id="subjects" class="flex flex-col gap-10 w-full">
 
+        {% if not request.user.is_authenticated %}
+
+            {% include 'accounts/components/sign_in_modal.html' %}
+
+            <script>
+                let signInModalShowButtons = document.querySelectorAll('[data-sign-in-modal]');
+                const signInModal = document.getElementById('sign_in_modal');
+
+                const updateSignInModalShowButtons = () => {
+                    signInModalShowButtons = document.querySelectorAll('[data-sign-in-modal]');
+
+                    signInModalShowButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            signInModal.classList.remove('hidden');
+                            document.body.classList.add('overflow-y-hidden')
+                        });
+                    });
+                }
+            </script>
+
+        {% endif %}
+
         {% for subject in page_obj %}
         <div class="subject animation-fade-in">
             <div id="subject-{{ subject.id }}" class="flex flex-col items-center gap-3 lobster-regular">
-                <h4 class="text-3xl font-bold text-gray-800">{{ subject.name }}</h4>
+                <h4 class="text-3xl font-bold">{{ subject.name }}</h4>
                 {% include 'subjects/components/subject_voting_item.html' %}
             </div>
     

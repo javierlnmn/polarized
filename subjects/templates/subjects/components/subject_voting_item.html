@@ -28,12 +28,16 @@
     </style>
     
     <div class="h-full w-full bg-white flex justify-between gap-0 relative">
-        <span 
+        <span
+            {% if request.user.is_authenticated %}
             hx-post="{% url 'subjects:subject_vote' subject.id %}" 
             hx-vals='{"value": -1}' 
             hx-target="#subject-voting-{{ subject.id }}" 
             hx-swap="outerHTML"
             hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+            {% else %}
+            data-sign-in-modal
+            {% endif %}
             class="absolute top-1/2 -translate-y-1/2 left-6 {% if not voted %}text-gray-700{% else %}text-white{% endif %} text-5xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
             {% if not voted %}
@@ -47,12 +51,16 @@
 
         <span class="place-self-end h-full bg-sky-500 animate-width-{{subject.id}}-right"></span>
 
-        <span 
+        <span
+            {% if request.user.is_authenticated %}
             hx-post="{% url 'subjects:subject_vote' subject.id %}" 
             hx-vals='{"value": 1}' 
             hx-target="#subject-voting-{{ subject.id }}" 
             hx-swap="outerHTML"
             hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+            {% else %}
+            data-sign-in-modal
+            {% endif %}
             class="absolute top-1/2 -translate-y-1/2 right-6 {% if not voted %}text-gray-700{% else %}text-white{% endif %} text-5xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
         {% if not voted %}
@@ -63,3 +71,9 @@
         </span>
     </div>
 </div>
+
+{% if not request.user.is_authenticated %}
+<script>
+    updateSignInModalShowButtons();
+</script>
+{% endif %}

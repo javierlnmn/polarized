@@ -3,11 +3,13 @@
 
 {% include 'common/base/head.html' %}
 
-<body class="flex flex-col min-h-svh">
+<body class="flex flex-col min-h-svh text-gray-800">
     {% include 'common/base/header.html' %}
     
     {% block content %}
     {% endblock %}
+
+    {% include 'accounts/components/sign_in_modal.html' %}
 
     {% include 'common/base/footer.html' %}
 </body>

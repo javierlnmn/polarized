@@ -14,6 +14,9 @@ class SubjectListView(ListView):
 class VotingView(View):
 
     def post(self, request, subject_id):
+        if not request.user.is_authenticated:
+            return HttpResponse(status=401)
+
         subject = get_object_or_404(Subject, id=subject_id)
 
         vote_value_str = request.POST.get('value')

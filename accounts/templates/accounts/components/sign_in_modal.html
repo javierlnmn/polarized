@@ -1,0 +1,14 @@
+{% extends 'common/components/modal.html' %}
+
+{% block modalId %}sign_in_modal{% endblock %}
+
+{% block modal_content %}
+    <div class="bg-white rounded-md w-11/12 max-w-[500px] p-6 flex flex-col items-center gap-2 h-64">
+        <p class="text-xl">Welcome to <span class="pacifico-regular"><span class="text-red-500">Polar</span><span class="text-sky-500">ized!</span></span></p>
+        <p class="text-gray-700">You need to log in with Google to be able to vote!</p>
+
+        <div class="self-center mt-12">
+            {% include 'accounts/components/google_sign_in_button.html' %}
+        </div>
+    </div>
+{% endblock %}

@@ -9,7 +9,7 @@
         <div x-data="{ openProfile: false }" class="relative z-20">
 
             {% if not request.user.is_authenticated %}
-                {% include 'common/components/google_sign_in_button.html' %}
+                {% include 'accounts/components/google_sign_in_button.html' %}
             {% else %}
 
                 <div class="flex gap-3 items-center justify-end cursor-pointer" @click="openProfile = !openProfile">
