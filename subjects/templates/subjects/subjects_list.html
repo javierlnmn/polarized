@@ -1,0 +1,27 @@
+
+{% extends 'common/_main.html' %}
+{% load static %}
+
+{% block content %}
+<main class="flex-1 grid place-items-center w-11/12 max-w-[1200px] mx-auto my-6">
+
+    <div id="subjects" class="flex flex-col gap-4">
+
+        {% for subject in page_obj %}
+        <div class="subject border-gray-700 border-2 h-56">
+            <h2>{{ subject.name }}</h2>
+    
+            {% if page_obj.has_next and forloop.last %}
+            <span hx-get="{% url 'subjects:subjects_list' %}?page={{ page_obj.next_page_number }}"
+                hx-swap="beforeend" hx-target="#subjects" hx-select=".subject"
+                hx-trigger="revealed">
+            </span>
+            {% endif %}
+
+        </div>
+        {% endfor %}
+    
+    </div>
+
+</main>
+{% endblock %}
