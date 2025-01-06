@@ -46,13 +46,13 @@
 
     <div class="h-full w-full bg-white flex justify-between gap-0 relative">
         <span
-            {% if request.user.is_authenticated %}
+            {% if not subject.user_voted and request.user.is_authenticated %}
             hx-post="{% url 'subjects:subject_vote' subject.id %}" 
             hx-vals='{"value": -1}' 
             hx-target="#subject-voting-{{ subject.id }}" 
             hx-swap="outerHTML"
             hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
-            {% else %}
+            {% elif not request.user.is_authenticated %}
             data-sign-in-modal
             {% endif %}
             class="absolute top-1/2 -translate-y-1/2 left-6 {% if not subject.user_voted %}text-gray-700{% else %}text-white{% endif %} text-5xl hover:scale-110 transition-all duration-300 cursor-pointer"
@@ -71,13 +71,13 @@
         {% endif %}
 
         <span
-            {% if request.user.is_authenticated %}
+            {% if not subject.user_voted and request.user.is_authenticated %}
             hx-post="{% url 'subjects:subject_vote' subject.id %}" 
             hx-vals='{"value": 1}' 
             hx-target="#subject-voting-{{ subject.id }}" 
             hx-swap="outerHTML"
             hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
-            {% else %}
+            {% elif not request.user.is_authenticated %}
             data-sign-in-modal
             {% endif %}
             class="absolute top-1/2 -translate-y-1/2 right-6 {% if not subject.user_voted %}text-gray-700{% else %}text-white{% endif %} text-5xl hover:scale-110 transition-all duration-300 cursor-pointer"
