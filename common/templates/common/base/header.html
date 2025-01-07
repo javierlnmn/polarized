@@ -46,12 +46,12 @@
                 {% include 'accounts/components/google_sign_in_button.html' %}
             {% else %}
 
-                <div class="flex gap-3 items-center justify-end cursor-pointer" x-on:click="openProfile = !openProfile">
+                <div class="flex gap-3 items-center justify-end cursor-pointer" x-on:click="openProfile = !openProfile" x-on:keydown.escape.window="openProfile = false">
                     <img class="h-10 aspect-1 rounded-full overflow-hidden shadow-sm" src="{{ request.user.profile_picture_url }}" alt="User's profile picture">
                     <p class="text-gray-700 dark:text-white underline select-none max-md:hidden">{{ request.user.username }}</p>
                 </div>
 
-                <div x-show="openProfile" x-transition x-transition.duration.250ms class="absolute right-0 mt-2 p-3 min-w-64 bg-white dark:bg-gray-800 shadow-lg rounded-md flex flex-col gap-1">
+                <div x-show="openProfile" x-transition x-transition.duration.250ms class="absolute right-0 top-12 p-3 min-w-64 bg-white dark:bg-gray-800 shadow-lg rounded-md flex flex-col gap-1">
                     <p class="text-gray-700 dark:text-white font-semibold">{{ request.user.first_name }} {{ request.user.last_name }}</p>
                     <p class="text-gray-500 dark:text-gray-400 underline">{{ request.user.username }}</p>
                     <form class="mt-3" method="POST" action="{% url 'accounts:logout' %}">
