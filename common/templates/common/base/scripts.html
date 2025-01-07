@@ -1,0 +1,24 @@
+<script>
+    function animatedCounter(target, time = 200, start = 0) {
+        return {
+            current: start,
+            target: target,
+            time: time,
+            start: start,
+            updateCounter: function () {
+                let progress = 0;
+                const updateInterval = .3;
+                const easing = (t) => 1 - Math.pow(1 - t, 3);
+                
+                const update = () => {
+                    progress += updateInterval / this.time;
+                    if (progress > 1) progress = 1;
+                    this.current = this.start + (this.target - this.start) * easing(progress);
+                    setTimeout(update, updateInterval);
+                };
+
+                update();
+            }
+        };
+    }
+</script>

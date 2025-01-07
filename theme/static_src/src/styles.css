@@ -19,20 +19,23 @@
 }
 
 .animation-fade-in {
-    animation: fadeIn .3s ease-in-out;
+    animation: fadeIn .5s forwards ease-in-out;
 }
 
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
     }
-    to {
+    50% {
+        opacity: .3;
+    }
+    100% {
         opacity: 1;
     }
 }
 
 .animation-scale {
-    animation: scale .3s ease-in-out;
+    animation: scale .3s forwards ease-in-out;
 }
 
 @keyframes scale {
@@ -42,4 +45,21 @@
     to {
         transform: scale(1);
     }
+}
+
+.animation-come-up {
+    animation: comeUp .5s forwards ease-in-out;
+}
+
+@keyframes comeUp {
+    from {
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.animation-fade-in-come-up {
+    animation: fadeIn .5s forwards ease-in-out, comeUp .5s forwards ease-in-out;
 }

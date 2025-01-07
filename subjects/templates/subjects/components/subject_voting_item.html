@@ -1,4 +1,4 @@
-<div id="subject-voting-{{ subject.id }}" class="relative animation-fade-in h-32 max-md:h-28 max-sm:h-20 w-full rounded-md bg-gradient-to-r from-red-500 dark:from-red-600 to-sky-500 dark:to-sky-600 p-1">
+<div id="subject-voting-{{ subject.id }}" class="relative {% if not subject.user_voted %}animation-fade-in{% else %}animation-fade-in-come-up{% endif %} h-32 max-md:h-28 max-sm:h-20 w-full rounded-md bg-gradient-to-r from-red-500 dark:from-red-600 to-sky-500 dark:to-sky-600 p-1">
     
     <style>
         .animate-width-{{subject.id}}-left {
@@ -10,7 +10,7 @@
                 width: 0%;
             }
             to {
-                width: {{subject.result.left}};
+                width: {{subject.result.left}}%;
             }
         }
 
@@ -23,7 +23,7 @@
                 width: 0%;
             }
             to {
-                width: {{subject.result.right}};
+                width: {{subject.result.right}}%;
             }
         }
     </style>
@@ -60,7 +60,8 @@
             {% if not subject.user_voted %}
                 <p>Left</p>
             {% else %}
-                <p>{{ subject.result.left }}</p>
+                <p><span x-data="animatedCounter({{ subject.result.left|floatformat:2 }}, 100, 0)" x-init="updateCounter" x-text="Math.round(current)"></span><span class="text-3xl max-sm:text-2xl">%</span></p>
+                
             {% endif %}
         </div>
 
@@ -85,7 +86,7 @@
         {% if not subject.user_voted %}
             <p>Right</p>
         {% else %}
-            <p>{{ subject.result.right }}</p>
+            <p><span x-data="animatedCounter({{ subject.result.right|floatformat:2 }}, 100, 0)" x-init="updateCounter" x-text="Math.round(current)"></span><span class="text-3xl max-sm:text-2xl">%</span></p>
         {% endif %}
         </div>
     </div>

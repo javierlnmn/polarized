@@ -37,8 +37,8 @@ class Subject(models.Model):
             result = 'tie'
 
         return {
-            'left': f'{left_percentage:.2f}%',
-            'right': f'{right_percentage:.2f}%',
+            'left': left_percentage,
+            'right': right_percentage,
             'result': result,
         }
 
