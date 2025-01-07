@@ -89,3 +89,16 @@
         opacity: .3;
     }
 }
+
+
+.animation-width {
+    animation: width 1.2s forwards ease-in-out;
+}
+@keyframes width {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
