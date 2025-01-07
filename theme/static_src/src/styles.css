@@ -63,3 +63,29 @@
 .animation-fade-in-come-up {
     animation: fadeIn .5s forwards ease-in-out, comeUp .5s forwards ease-in-out;
 }
+
+.animation-loading-throbber {
+    animation: spin 1s linear infinite, opacityPulse .5s linear alternate infinite;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+@keyframes opacityPulse {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .3;
+    }
+}

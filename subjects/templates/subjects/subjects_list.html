@@ -5,7 +5,7 @@
 {% block content %}
 <main class="flex-1 grid place-items-center w-11/12 max-w-[900px] mx-auto my-6">
 
-    <div x-data="{ signInModalVisible: false }" id="subjects" class="flex flex-col gap-10 w-full">
+    <div x-data="{ signInModalVisible: false, isLoading: false }" id="subjects" class="flex flex-col gap-10 w-full">
 
         {% for subject in page_obj %}
         <div class="subject animation-fade-in">
@@ -22,6 +22,7 @@
                 hx-swap="beforeend"
                 hx-select=".subject"
                 hx-trigger="revealed"
+                hx-indicator="#loading"
             />
             {% endif %}
         </div>
@@ -36,6 +37,10 @@
         </div>
         {% endif %}
 
+    </div>
+
+    <div id="loading" class="htmx-indicator hidden [&.htmx-request]:block mt-6">
+        {% include 'common/components/loading_throbber.html' %}
     </div>
 
 </main>
