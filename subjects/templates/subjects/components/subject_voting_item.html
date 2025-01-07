@@ -1,4 +1,6 @@
-<div id="subject-voting-{{ subject.id }}" class="relative {% if not subject.user_voted %}animation-fade-in{% else %}animation-fade-in-come-up{% endif %} h-32 max-md:h-28 max-sm:h-20 w-full rounded-md bg-gradient-to-r from-red-500 dark:from-red-600 to-sky-500 dark:to-sky-600 p-1">
+{% load subject_tags %}
+
+<div id="subject-voting-{{ subject.id }}" class="relative {% if not subject|user_voted:request.user %}animation-fade-in{% else %}animation-fade-in-come-up{% endif %} h-32 max-md:h-28 max-sm:h-20 w-full rounded-md bg-gradient-to-r from-red-500 dark:from-red-600 to-sky-500 dark:to-sky-600 p-1">
     
     <style>
         .animate-width-{{subject.id}}-left {
@@ -28,7 +30,7 @@
         }
     </style>
 
-    {% if subject.user_voted %}
+    {% if subject|user_voted:request.user %}
         <span
             class="absolute z-10 -top-2 -right-2"
             hx-delete="{% url 'subjects:subject_vote' subject.id %}" 
@@ -45,8 +47,8 @@
     {% endif %}
 
     <div class="h-full w-full bg-white dark:bg-gray-800 flex justify-between gap-0 relative">
-        <div
-            {% if not subject.user_voted and request.user.is_authenticated %}
+        <span
+            {% if not subject|user_voted:request.user and request.user.is_authenticated %}
             hx-post="{% url 'subjects:subject_vote' subject.id %}" 
             hx-vals='{"value": -1}' 
             hx-target="#subject-voting-{{ subject.id }}" 
@@ -55,24 +57,24 @@
             {% elif not request.user.is_authenticated %}
             x-on:click="signInModalVisible = true; document.body.classList.add('overflow-y-hidden')"
             {% endif %}
-            class="absolute top-1/2 -translate-y-1/2 left-6 {% if not subject.user_voted %}text-gray-700 dark:text-white{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
+            class="absolute top-1/2 -translate-y-1/2 left-6 {% if not subject|user_voted:request.user %}text-gray-700 dark:text-white{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
-            {% if not subject.user_voted %}
+            {% if not subject|user_voted:request.user %}
                 <p>Left</p>
             {% else %}
                 <p><span x-data="animatedCounter({{ subject.result.left|floatformat:2 }}, 100, 0)" x-init="updateCounter" x-text="Math.round(current)"></span><span class="text-3xl max-sm:text-2xl">%</span></p>
                 
             {% endif %}
-        </div>
+        </span>
 
-        {% if subject.user_voted %}
+        {% if subject|user_voted:request.user %}
         <span class="place-self-start h-full bg-red-500 dark:bg-red-600 animate-width-{{subject.id}}-left"></span>
 
         <span class="place-self-end h-full bg-sky-500 dark:bg-sky-600 animate-width-{{subject.id}}-right"></span>
         {% endif %}
 
-        <div
-            {% if not subject.user_voted and request.user.is_authenticated %}
+        <span
+            {% if not subject|user_voted:request.user and request.user.is_authenticated %}
             hx-post="{% url 'subjects:subject_vote' subject.id %}" 
             hx-vals='{"value": 1}' 
             hx-target="#subject-voting-{{ subject.id }}" 
@@ -81,13 +83,13 @@
             {% elif not request.user.is_authenticated %}
             x-on:click="signInModalVisible = true; document.body.classList.add('overflow-y-hidden')"
             {% endif %}
-            class="absolute top-1/2 -translate-y-1/2 right-6 {% if not subject.user_voted %}text-gray-700 dark:text-white{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
+            class="absolute top-1/2 -translate-y-1/2 right-6 {% if not subject|user_voted:request.user %}text-gray-700 dark:text-white{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
-        {% if not subject.user_voted %}
+        {% if not subject|user_voted:request.user %}
             <p>Right</p>
         {% else %}
             <p><span x-data="animatedCounter({{ subject.result.right|floatformat:2 }}, 100, 0)" x-init="updateCounter" x-text="Math.round(current)"></span><span class="text-3xl max-sm:text-2xl">%</span></p>
         {% endif %}
-        </div>
+        </span>
     </div>
 </div>

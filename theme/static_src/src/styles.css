@@ -19,7 +19,7 @@
 }
 
 .animation-fade-in {
-    animation: fadeIn .5s forwards ease-in-out;
+    animation: fadeIn .3s forwards ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -48,7 +48,7 @@
 }
 
 .animation-come-up {
-    animation: comeUp .5s forwards ease-in-out;
+    animation: comeUp .3s forwards ease-in-out;
 }
 
 @keyframes comeUp {
