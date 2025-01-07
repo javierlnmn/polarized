@@ -9,9 +9,9 @@
 
         {% for subject in page_obj %}
         <div class="subject animation-fade-in">
-            <div id="subject-{{ subject.id }}" class="flex flex-col items-center gap-3 lobster-regular">
-                <h4 class="text-3xl font-bold">{{ subject.name }}</h4>
-                <p class="text-small"></p>
+            <div id="subject-{{ subject.id }}" class="flex flex-col items-center gap-3">
+                <h4 class="pacifico-regular text-3xl font-bold">{{ subject.name }}</h4>
+                <p class="text-gray-400 text-center text-small">{{ subject.description }}</p>
                 {% include 'subjects/components/subject_voting_item.html' %}
             </div>
     

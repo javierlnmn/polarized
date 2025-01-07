@@ -9,6 +9,7 @@ class SubjectListView(ListView):
     model = Subject
     template_name = 'subjects/subjects_list.html'
     paginate_by = 5
+    ordering = '-created_at'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
