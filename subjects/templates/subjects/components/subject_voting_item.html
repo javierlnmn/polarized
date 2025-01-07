@@ -1,4 +1,4 @@
-<div id="subject-voting-{{ subject.id }}" class="relative animation-fade-in h-36 max-md:h-32 max-sm:h-28 w-full rounded-md bg-gradient-to-r from-red-500 to-sky-500 p-1">
+<div id="subject-voting-{{ subject.id }}" class="relative animation-fade-in h-36 max-md:h-28 max-sm:h-20 w-full rounded-md bg-gradient-to-r from-red-500 to-sky-500 p-1">
     
     <style>
         .animate-width-{{subject.id}}-left {
@@ -45,7 +45,7 @@
     {% endif %}
 
     <div class="h-full w-full bg-white flex justify-between gap-0 relative">
-        <span
+        <div
             {% if not subject.user_voted and request.user.is_authenticated %}
             hx-post="{% url 'subjects:subject_vote' subject.id %}" 
             hx-vals='{"value": -1}' 
@@ -53,16 +53,16 @@
             hx-swap="outerHTML"
             hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
             {% elif not request.user.is_authenticated %}
-            data-sign-in-modal
+            x-on:click="signInModalVisible = true; document.body.classList.add('overflow-y-hidden')"
             {% endif %}
-            class="absolute top-1/2 -translate-y-1/2 left-6 {% if not subject.user_voted %}text-gray-700{% else %}text-white{% endif %} text-5xl hover:scale-110 transition-all duration-300 cursor-pointer"
+            class="absolute top-1/2 -translate-y-1/2 left-6 {% if not subject.user_voted %}text-gray-700{% else %}text-white{% endif %} text-5xl max-sm:text-4xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
             {% if not subject.user_voted %}
-                Left
+                <p>Left</p>
             {% else %}
-                {{ subject.result.left }}
+                <p>{{ subject.result.left }}</p>
             {% endif %}
-        </span>
+        </div>
 
         {% if subject.user_voted %}
         <span class="place-self-start h-full bg-red-500 animate-width-{{subject.id}}-left"></span>
@@ -70,7 +70,7 @@
         <span class="place-self-end h-full bg-sky-500 animate-width-{{subject.id}}-right"></span>
         {% endif %}
 
-        <span
+        <div
             {% if not subject.user_voted and request.user.is_authenticated %}
             hx-post="{% url 'subjects:subject_vote' subject.id %}" 
             hx-vals='{"value": 1}' 
@@ -78,21 +78,15 @@
             hx-swap="outerHTML"
             hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
             {% elif not request.user.is_authenticated %}
-            data-sign-in-modal
+            x-on:click="signInModalVisible = true; document.body.classList.add('overflow-y-hidden')"
             {% endif %}
-            class="absolute top-1/2 -translate-y-1/2 right-6 {% if not subject.user_voted %}text-gray-700{% else %}text-white{% endif %} text-5xl hover:scale-110 transition-all duration-300 cursor-pointer"
+            class="absolute top-1/2 -translate-y-1/2 right-6 {% if not subject.user_voted %}text-gray-700{% else %}text-white{% endif %} text-5xl max-sm:text-4xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
         {% if not subject.user_voted %}
-            Right
+            <p>Right</p>
         {% else %}
-            {{ subject.result.right }}
+            <p>{{ subject.result.right }}</p>
         {% endif %}
-        </span>
+        </div>
     </div>
 </div>
-
-{% if not request.user.is_authenticated %}
-<script>
-    updateSignInModalShowButtons();
-</script>
-{% endif %}

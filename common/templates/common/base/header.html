@@ -12,9 +12,9 @@
                 {% include 'accounts/components/google_sign_in_button.html' %}
             {% else %}
 
-                <div class="flex gap-3 items-center justify-end cursor-pointer" @click="openProfile = !openProfile">
+                <div class="flex gap-3 items-center justify-end cursor-pointer" x-on:click="openProfile = !openProfile">
                     <img class="h-10 aspect-1 rounded-full overflow-hidden shadow-sm" src="{{ request.user.profile_picture_url }}" alt="User's profile picture">
-                    <p class="text-gray-700 underline select-none">{{ request.user.username }}</p>
+                    <p class="text-gray-700 underline select-none max-md:hidden">{{ request.user.username }}</p>
                 </div>
 
                 <div x-show="openProfile" x-transition x-transition.duration.250ms class="absolute right-0 mt-2 p-3 min-w-64 bg-white shadow-lg rounded-md flex flex-col gap-1">

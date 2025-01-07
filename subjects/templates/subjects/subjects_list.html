@@ -5,34 +5,13 @@
 {% block content %}
 <main class="flex-1 grid place-items-center w-11/12 max-w-[900px] mx-auto my-6">
 
-    <div id="subjects" class="flex flex-col gap-10 w-full">
-
-        {% if not request.user.is_authenticated %}
-            
-            {% include 'accounts/components/sign_in_modal.html' %}
-
-            <script>
-                let signInModalShowButtons = document.querySelectorAll('[data-sign-in-modal]');
-                const signInModal = document.getElementById('sign_in_modal');
-
-                const updateSignInModalShowButtons = () => {
-                    signInModalShowButtons = document.querySelectorAll('[data-sign-in-modal]');
-
-                    signInModalShowButtons.forEach(button => {
-                        button.addEventListener('click', () => {
-                            signInModal.classList.remove('hidden');
-                            document.body.classList.add('overflow-y-hidden')
-                        });
-                    });
-                }
-            </script>
-
-        {% endif %}
+    <div x-data="{ signInModalVisible: false }" id="subjects" class="flex flex-col gap-10 w-full">
 
         {% for subject in page_obj %}
         <div class="subject animation-fade-in">
             <div id="subject-{{ subject.id }}" class="flex flex-col items-center gap-3 lobster-regular">
                 <h4 class="text-3xl font-bold">{{ subject.name }}</h4>
+                <p class="text-small"></p>
                 {% include 'subjects/components/subject_voting_item.html' %}
             </div>
     
@@ -45,11 +24,20 @@
                 hx-trigger="revealed"
             />
             {% endif %}
-
         </div>
         {% endfor %}
     
+        {% if not request.user.is_authenticated %}
+        <div
+            x-show="signInModalVisible"
+            x-transition
+        >
+            {% include 'accounts/components/sign_in_modal.html' %}
+        </div>
+        {% endif %}
+
     </div>
 
 </main>
+
 {% endblock %}
