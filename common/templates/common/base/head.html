@@ -9,10 +9,10 @@
     <link rel="icon" href="{% static 'images/favicon/favicon.ico' %}">
 
     {% comment %} Google sign up client code {% endcomment %}
-    <script src="https://accounts.google.com/gsi/client" async></script>
+    <script defer src="https://accounts.google.com/gsi/client" async></script>
     
     {% comment %} HTMX {% endcomment %}
-    <script src="https://unpkg.com/htmx.org"></script>
+    <script defer src="https://unpkg.com/htmx.org"></script>
 
     {% comment %}  Alpine.js Persist plugin {% endcomment %}
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
