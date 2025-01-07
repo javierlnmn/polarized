@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html 
+    x-cloak
+    x-data="{ theme: $persist('auto').as('theme') }"
+    x-bind:class="
+    {
+        'dark': theme === 'dark' ||
+        (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    }
+    "
+    lang="en"
+>
 
 {% include 'common/base/head.html' %}
 
-<body class="flex flex-col min-h-svh text-gray-800">
+<body class="flex flex-col min-h-svh text-gray-800 dark:bg-gray-800 dark:text-white">
     {% include 'common/base/header.html' %}
     
     {% block content %}

@@ -1,4 +1,4 @@
-<div id="subject-voting-{{ subject.id }}" class="relative animation-fade-in h-32 max-md:h-28 max-sm:h-20 w-full rounded-md bg-gradient-to-r from-red-500 to-sky-500 p-1">
+<div id="subject-voting-{{ subject.id }}" class="relative animation-fade-in h-32 max-md:h-28 max-sm:h-20 w-full rounded-md bg-gradient-to-r from-red-500 dark:from-red-600 to-sky-500 dark:to-sky-600 p-1">
     
     <style>
         .animate-width-{{subject.id}}-left {
@@ -44,7 +44,7 @@
         </span>
     {% endif %}
 
-    <div class="h-full w-full bg-white flex justify-between gap-0 relative">
+    <div class="h-full w-full bg-white dark:bg-gray-800 flex justify-between gap-0 relative">
         <div
             {% if not subject.user_voted and request.user.is_authenticated %}
             hx-post="{% url 'subjects:subject_vote' subject.id %}" 
@@ -55,7 +55,7 @@
             {% elif not request.user.is_authenticated %}
             x-on:click="signInModalVisible = true; document.body.classList.add('overflow-y-hidden')"
             {% endif %}
-            class="absolute top-1/2 -translate-y-1/2 left-6 {% if not subject.user_voted %}text-gray-700{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
+            class="absolute top-1/2 -translate-y-1/2 left-6 {% if not subject.user_voted %}text-gray-700 dark:text-white{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
             {% if not subject.user_voted %}
                 <p>Left</p>
@@ -65,9 +65,9 @@
         </div>
 
         {% if subject.user_voted %}
-        <span class="place-self-start h-full bg-red-500 animate-width-{{subject.id}}-left"></span>
+        <span class="place-self-start h-full bg-red-500 dark:bg-red-600 animate-width-{{subject.id}}-left"></span>
 
-        <span class="place-self-end h-full bg-sky-500 animate-width-{{subject.id}}-right"></span>
+        <span class="place-self-end h-full bg-sky-500 dark:bg-sky-600 animate-width-{{subject.id}}-right"></span>
         {% endif %}
 
         <div
@@ -80,7 +80,7 @@
             {% elif not request.user.is_authenticated %}
             x-on:click="signInModalVisible = true; document.body.classList.add('overflow-y-hidden')"
             {% endif %}
-            class="absolute top-1/2 -translate-y-1/2 right-6 {% if not subject.user_voted %}text-gray-700{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
+            class="absolute top-1/2 -translate-y-1/2 right-6 {% if not subject.user_voted %}text-gray-700 dark:text-white{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
         {% if not subject.user_voted %}
             <p>Right</p>

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+[x-cloak] {
+    @apply !hidden;
+}
+
 .pacifico-regular {
     font-family: "Pacifico", serif;
     font-weight: 400;
