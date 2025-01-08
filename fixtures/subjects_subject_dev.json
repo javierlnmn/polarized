@@ -1,0 +1,212 @@
+[
+    {
+        "model": "subjects.subject",
+        "pk": 1,
+        "fields": {
+            "name": "Tener criptomonedas",
+            "description": "Poseer activos digitales como forma de inversión o ahorro.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 2,
+        "fields": {
+            "name": "Escuchar rock",
+            "description": "Disfrutar de música con guitarras eléctricas y ritmos intensos.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 3,
+        "fields": {
+            "name": "Echarse la siesta",
+            "description": "Dormir un rato después de comer para recuperar energías.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 4,
+        "fields": {
+            "name": "Estudiar Derecho",
+            "description": "Formarse en leyes y el sistema jurídico.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 5,
+        "fields": {
+            "name": "Estudiar ADE",
+            "description": "Aprender sobre administración y gestión empresarial.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 6,
+        "fields": {
+            "name": "Tener dinero",
+            "description": "Disponer de recursos económicos para gastos y ahorros.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 7,
+        "fields": {
+            "name": "Llevar ropa colorida",
+            "description": "Vestirse con prendas de tonos vivos y llamativos.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 8,
+        "fields": {
+            "name": "Vivir de alquiler",
+            "description": "Residir en una vivienda pagando una renta mensual.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 9,
+        "fields": {
+            "name": "Pasar el domingo en el campo",
+            "description": "Disfrutar de la naturaleza en un día de descanso.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 10,
+        "fields": {
+            "name": "Donar a la Cruz Roja",
+            "description": "Contribuir económicamente a una organización humanitaria.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 11,
+        "fields": {
+            "name": "Ir al casino",
+            "description": "Visitar un lugar para jugar juegos de azar y apostar.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 12,
+        "fields": {
+            "name": "Comer croquetas",
+            "description": "Disfrutar de este plato tradicional relleno y rebozado.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 13,
+        "fields": {
+            "name": "Comer tortilla de patatas",
+            "description": "Saborear este plato clásico de la cocina española.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 14,
+        "fields": {
+            "name": "Beber vino",
+            "description": "Disfrutar de una bebida elaborada con uvas fermentadas.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 15,
+        "fields": {
+            "name": "Beber cerveza",
+            "description": "Tomar una bebida refrescante y fermentada a base de cereales.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 16,
+        "fields": {
+            "name": "Viajar por España",
+            "description": "Recorrer el país disfrutando de su cultura y paisajes.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 17,
+        "fields": {
+            "name": "Fumar porros",
+            "description": "Consumir cannabis de manera recreativa.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 18,
+        "fields": {
+            "name": "Tener segundo nombre",
+            "description": "Poseer un nombre adicional al principal.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 19,
+        "fields": {
+            "name": "Tener segunda residencia",
+            "description": "Disponer de otra vivienda para estancias ocasionales.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 20,
+        "fields": {
+            "name": "Ir a festivales",
+            "description": "Asistir a eventos masivos de música y cultura.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 21,
+        "fields": {
+            "name": "Tener iPhone",
+            "description": "Poseer un dispositivo móvil de la marca Apple.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    }
+]
