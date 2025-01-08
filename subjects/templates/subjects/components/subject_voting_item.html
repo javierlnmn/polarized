@@ -30,7 +30,7 @@
             {% elif not request.user.is_authenticated %}
                 x-on:click="signInModalVisible = true; document.body.classList.add('overflow-y-hidden')"
             {% endif %}
-            class="absolute top-1/2 -translate-y-1/2 left-6 {% if not subject|user_voted:request.user %}text-gray-700 dark:text-white{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
+            class="absolute top-1/2 -translate-y-1/2 left-6 text-gray-700 dark:text-white text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
             {% if not subject|user_voted:request.user %}
                 <p>{% trans "Left" %}</p>
@@ -40,11 +40,11 @@
         </span>
 
         {% if subject|user_voted:request.user %}
-            <div class="place-self-start h-full flex flex-col" style="width: {{subject.result.left}}%">
+            <div class="place-self-start h-full flex flex-col" style="width: {{subject.result.left|floatformat:0}}%">
                 <div class="animation-width place-self-start h-full bg-red-500 dark:bg-red-600"></div>
             </div>
 
-            <div class="place-self-end h-full flex flex-col" style="width: {{subject.result.right}}%">
+            <div class="place-self-end h-full flex flex-col" style="width: {{subject.result.right|floatformat:0}}%">
                 <div class="animation-width place-self-end h-full bg-sky-500 dark:bg-sky-600"></div>
             </div>
         {% endif %}
@@ -59,7 +59,7 @@
             {% elif not request.user.is_authenticated %}
                 x-on:click="signInModalVisible = true; document.body.classList.add('overflow-y-hidden')"
             {% endif %}
-            class="absolute top-1/2 -translate-y-1/2 right-6 {% if not subject|user_voted:request.user %}text-gray-700 dark:text-white{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
+            class="absolute top-1/2 -translate-y-1/2 right-6 text-gray-700 dark:text-white text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
         {% if not subject|user_voted:request.user %}
             <p>{% trans "Right" %}</p>
