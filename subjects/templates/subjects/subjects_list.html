@@ -8,7 +8,7 @@
         {% for subject in page_obj %}
         <div class="subject animation-fade-in">
             <div id="subject-{{ subject.id }}" class="flex flex-col items-center gap-3">
-                <h4 class="pacifico-regular text-3xl font-bold">{{ subject.name }}</h4>
+                <h4 class="pacifico-regular text-center text-3xl font-bold">{{ subject.name }}</h4>
                 {% if subject.description %}<p class="text-gray-400 text-center text-small">{{ subject.description }}</p>{% endif %}
                 {% include 'subjects/components/subject_voting_item.html' %}
             </div>
