@@ -64,7 +64,7 @@ class Vote(models.Model):
 
     subject = models.ForeignKey(Subject, related_name='votes', on_delete=models.CASCADE)
     user = models.ForeignKey(CustomUser, related_name='votes', on_delete=models.CASCADE)
-    value = models.IntegerField(max_length=2, choices=VoteChoices)
+    value = models.IntegerField(choices=VoteChoices)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
