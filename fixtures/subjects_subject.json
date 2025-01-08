@@ -1,0 +1,354 @@
+[
+    {
+        "model": "subjects.subject",
+        "pk": 1,
+        "fields": {
+            "name_es": "Tener criptomonedas",
+            "name_en": "Own cryptocurrencies",
+            "name_fr": "Avoir des cryptomonnaies",
+            "name_de": "Kryptowährungen besitzen",
+            "description_es": "Poseer activos digitales como forma de inversión o ahorro.",
+            "description_en": "Own digital assets as a form of investment or savings.",
+            "description_fr": "Posséder des actifs numériques comme forme d'investissement ou d'épargne.",
+            "description_de": "Digitale Vermögenswerte besitzen, um zu investieren oder zu sparen.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 2,
+        "fields": {
+            "name_es": "Escuchar rock",
+            "name_en": "Listen to rock",
+            "name_fr": "Écouter du rock",
+            "name_de": "Rock hören",
+            "description_es": "Disfrutar de música con guitarras eléctricas y ritmos intensos.",
+            "description_en": "Enjoy music with electric guitars and intense rhythms.",
+            "description_fr": "Apprécier de la musique avec des guitares électriques et des rythmes intenses.",
+            "description_de": "Musik mit E-Gitarren und intensiven Rhythmen genießen.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 3,
+        "fields": {
+            "name_es": "Echarse la siesta",
+            "name_en": "Take a nap",
+            "name_fr": "Faire une sieste",
+            "name_de": "Ein Nickerchen machen",
+            "description_es": "Dormir un rato después de comer para recuperar energías.",
+            "description_en": "Sleep for a while after eating to recharge energy.",
+            "description_fr": "Dormir un moment après avoir mangé pour récupérer de l'énergie.",
+            "description_de": "Ein wenig schlafen, um nach dem Essen Energie zu tanken.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 4,
+        "fields": {
+            "name_es": "Estudiar Derecho",
+            "name_en": "Study Law",
+            "name_fr": "Étudier le droit",
+            "name_de": "Rechtswissenschaft studieren",
+            "description_es": "Formarse en leyes y el sistema jurídico.",
+            "description_en": "Get educated in law and the legal system.",
+            "description_fr": "Se former en droit et dans le système juridique.",
+            "description_de": "Sich in Rechtswissenschaften und dem Rechtssystem ausbilden.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 5,
+        "fields": {
+            "name_es": "Estudiar ADE",
+            "name_en": "Study Business Administration",
+            "name_fr": "Étudier l'administration des affaires",
+            "name_de": "Betriebswirtschaftslehre studieren",
+            "description_es": "Aprender sobre administración y gestión empresarial.",
+            "description_en": "Learn about business management and administration.",
+            "description_fr": "Apprendre la gestion des affaires et l'administration.",
+            "description_de": "Lernen Sie über Unternehmensführung und Verwaltung.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 6,
+        "fields": {
+            "name_es": "Tener dinero",
+            "name_en": "Have money",
+            "name_fr": "Avoir de l'argent",
+            "name_de": "Geld haben",
+            "description_es": "Disponer de recursos económicos para gastos y ahorros.",
+            "description_en": "Have financial resources for expenses and savings.",
+            "description_fr": "Avoir des ressources financières pour les dépenses et l'épargne.",
+            "description_de": "Finanzielle Mittel für Ausgaben und Ersparnisse haben.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 7,
+        "fields": {
+            "name_es": "Llevar ropa colorida",
+            "name_en": "Wear colorful clothes",
+            "name_fr": "Porter des vêtements colorés",
+            "name_de": "Bunte Kleidung tragen",
+            "description_es": "Vestirse con prendas de tonos vivos y llamativos.",
+            "description_en": "Dress in bright and eye-catching colors.",
+            "description_fr": "S'habiller avec des vêtements aux couleurs vives et accrocheuses.",
+            "description_de": "Sich in leuchtenden und auffälligen Farben kleiden.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 8,
+        "fields": {
+            "name_es": "Vivir de alquiler",
+            "name_en": "Live in rental housing",
+            "name_fr": "Vivre en location",
+            "name_de": "Mieten wohnen",
+            "description_es": "Residir en una vivienda pagando una renta mensual.",
+            "description_en": "Live in a house paying a monthly rent.",
+            "description_fr": "Vivre dans un logement en payant un loyer mensuel.",
+            "description_de": "In einem Haus wohnen und eine monatliche Miete zahlen.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 9,
+        "fields": {
+            "name_es": "Pasar el domingo en el campo",
+            "name_en": "Spend Sunday in the countryside",
+            "name_fr": "Passer le dimanche à la campagne",
+            "name_de": "Sonntag auf dem Land verbringen",
+            "description_es": "Disfrutar de la naturaleza en un día de descanso.",
+            "description_en": "Enjoy nature on a relaxing day.",
+            "description_fr": "Profiter de la nature lors d'une journée de repos.",
+            "description_de": "Die Natur an einem entspannten Tag genießen.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 10,
+        "fields": {
+            "name_es": "Donar a la Cruz Roja",
+            "name_en": "Donate to the Red Cross",
+            "name_fr": "Faire un don à la Croix-Rouge",
+            "name_de": "An die Rote Kreuz spenden",
+            "description_es": "Contribuir económicamente a una organización humanitaria.",
+            "description_en": "Contribute financially to a humanitarian organization.",
+            "description_fr": "Contribuer financièrement à une organisation humanitaire.",
+            "description_de": "Finanziell zu einer humanitären Organisation beitragen.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 11,
+        "fields": {
+            "name_es": "Ir al casino",
+            "name_en": "Go to the casino",
+            "name_fr": "Aller au casino",
+            "name_de": "In das Casino gehen",
+            "description_es": "Visitar un lugar para jugar juegos de azar y apostar.",
+            "description_en": "Visit a place to play gambling games and bet.",
+            "description_fr": "Visiter un endroit pour jouer à des jeux de hasard et parier.",
+            "description_de": "Einen Ort besuchen, um Glücksspiele zu spielen und zu wetten.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 11,
+        "fields": {
+            "name_es": "Ir al casino",
+            "name_en": "Go to the casino",
+            "name_fr": "Aller au casino",
+            "name_de": "Ins Casino gehen",
+            "description_es": "Visitar un lugar para jugar juegos de azar y apostar.",
+            "description_en": "Visit a place to play gambling games and bet.",
+            "description_fr": "Visiter un endroit pour jouer à des jeux de hasard et parier.",
+            "description_de": "Einen Ort besuchen, um Glücksspiel zu spielen und zu wetten.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 12,
+        "fields": {
+            "name_es": "Comer croquetas",
+            "name_en": "Eat croquettes",
+            "name_fr": "Manger des croquettes",
+            "name_de": "Kroketten essen",
+            "description_es": "Disfrutar de este plato tradicional relleno y rebozado.",
+            "description_en": "Enjoy this traditional stuffed and breaded dish.",
+            "description_fr": "Profiter de ce plat traditionnel farci et pané.",
+            "description_de": "Dieses traditionelle gefüllte und panierte Gericht genießen.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 13,
+        "fields": {
+            "name_es": "Comer tortilla de patatas",
+            "name_en": "Eat potato omelette",
+            "name_fr": "Manger une omelette de pommes de terre",
+            "name_de": "Spanische Tortilla essen",
+            "description_es": "Saborear este plato clásico de la cocina española.",
+            "description_en": "Taste this classic dish from Spanish cuisine.",
+            "description_fr": "Goûter ce plat classique de la cuisine espagnole.",
+            "description_de": "Dieses klassische Gericht der spanischen Küche probieren.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 14,
+        "fields": {
+            "name_es": "Beber vino",
+            "name_en": "Drink wine",
+            "name_fr": "Boire du vin",
+            "name_de": "Wein trinken",
+            "description_es": "Disfrutar de una bebida elaborada con uvas fermentadas.",
+            "description_en": "Enjoy a drink made from fermented grapes.",
+            "description_fr": "Apprécier une boisson élaborée à partir de raisins fermentés.",
+            "description_de": "Ein Getränk aus fermentierten Trauben genießen.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 15,
+        "fields": {
+            "name_es": "Beber cerveza",
+            "name_en": "Drink beer",
+            "name_fr": "Boire de la bière",
+            "name_de": "Bier trinken",
+            "description_es": "Tomar una bebida refrescante y fermentada a base de cereales.",
+            "description_en": "Drink a refreshing and fermented beverage made from cereals.",
+            "description_fr": "Boire une boisson rafraîchissante et fermentée à base de céréales.",
+            "description_de": "Ein erfrischendes und fermentiertes Getränk aus Getreide trinken.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 16,
+        "fields": {
+            "name_es": "Viajar por España",
+            "name_en": "Travel through Spain",
+            "name_fr": "Voyager à travers l'Espagne",
+            "name_de": "Durch Spanien reisen",
+            "description_es": "Recorrer el país disfrutando de su cultura y paisajes.",
+            "description_en": "Travel across the country enjoying its culture and landscapes.",
+            "description_fr": "Voyager à travers le pays en profitant de sa culture et de ses paysages.",
+            "description_de": "Durch das Land reisen und seine Kultur und Landschaften genießen.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 17,
+        "fields": {
+            "name_es": "Fumar porros",
+            "name_en": "Smoke joints",
+            "name_fr": "Fumer des joints",
+            "name_de": "Joints rauchen",
+            "description_es": "Consumir cannabis de manera recreativa.",
+            "description_en": "Consume cannabis recreationally.",
+            "description_fr": "Consommer du cannabis de manière récréative.",
+            "description_de": "Cannabis aus Freizeitgründen konsumieren.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 18,
+        "fields": {
+            "name_es": "Tener segundo nombre",
+            "name_en": "Have a middle name",
+            "name_fr": "Avoir un deuxième prénom",
+            "name_de": "Einen zweiten Vornamen haben",
+            "description_es": "Poseer un nombre adicional al principal.",
+            "description_en": "Have an additional name besides the first one.",
+            "description_fr": "Avoir un prénom supplémentaire en plus du principal.",
+            "description_de": "Einen zusätzlichen Namen neben dem ersten haben.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 19,
+        "fields": {
+            "name_es": "Tener segunda residencia",
+            "name_en": "Have a second home",
+            "name_fr": "Avoir une deuxième résidence",
+            "name_de": "Ein zweites Zuhause haben",
+            "description_es": "Disponer de otra vivienda para estancias ocasionales.",
+            "description_en": "Have another residence for occasional stays.",
+            "description_fr": "Avoir une autre résidence pour des séjours occasionnels.",
+            "description_de": "Ein weiteres Zuhause für gelegentliche Aufenthalte haben.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 20,
+        "fields": {
+            "name_es": "Ir a festivales",
+            "name_en": "Go to festivals",
+            "name_fr": "Aller à des festivals",
+            "name_de": "Zu Festivals gehen",
+            "description_es": "Asistir a eventos masivos de música y cultura.",
+            "description_en": "Attend large music and culture events.",
+            "description_fr": "Assister à des événements massifs de musique et de culture.",
+            "description_de": "Große Musik- und Kulturveranstaltungen besuchen.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    },
+    {
+        "model": "subjects.subject",
+        "pk": 21,
+        "fields": {
+            "name_es": "Tener iPhone",
+            "name_en": "Own an iPhone",
+            "name_fr": "Avoir un iPhone",
+            "name_de": "Ein iPhone besitzen",
+            "description_es": "Poseer un dispositivo móvil de la marca Apple.",
+            "description_en": "Own a mobile device from Apple.",
+            "description_fr": "Posséder un appareil mobile de la marque Apple.",
+            "description_de": "Ein mobiles Gerät von Apple besitzen.",
+            "created_at": "2025-01-08T00:00:00Z",
+            "updated_at": "2025-01-08T00:00:00Z"
+        }
+    }
+]
