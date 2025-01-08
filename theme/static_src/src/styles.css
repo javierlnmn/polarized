@@ -19,7 +19,7 @@
 }
 
 .animation-fade-in {
-    animation: fadeIn .5s forwards ease-in-out;
+    animation: fadeIn .3s forwards ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -48,7 +48,7 @@
 }
 
 .animation-come-up {
-    animation: comeUp .5s forwards ease-in-out;
+    animation: comeUp .3s forwards ease-in-out;
 }
 
 @keyframes comeUp {
@@ -87,5 +87,18 @@
     }
     100% {
         opacity: .3;
+    }
+}
+
+
+.animation-width {
+    animation: width 1.2s forwards ease-in-out;
+}
+@keyframes width {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
     }
 }

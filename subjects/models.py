@@ -47,6 +47,11 @@ class Subject(models.Model):
         total_votes = self.votes.count()
         return total_votes if total_votes else 0
 
+    def user_voted(self, user):
+        if not user.is_authenticated:
+            return False
+        return self.votes.filter(user=user).exists()
+
     def __str__(self):
         return self.name
 
