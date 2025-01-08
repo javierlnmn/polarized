@@ -1,4 +1,6 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
+
 from .models import Subject, Vote
 
 
@@ -8,7 +10,7 @@ class VoteInline(admin.TabularInline):
 
 
 @admin.register(Subject)
-class SubjectAdmin(admin.ModelAdmin):
+class SubjectAdmin(TranslationAdmin):
     list_display = ('name', 'description', 'result', 'total_votes')
     search_fields = ('name', 'description')
 

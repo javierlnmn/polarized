@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     # JET admin
     'jet.dashboard',
     'jet',
+
+    # Django Modeltranslation
+    'modeltranslation',
     
     # Django
     'django.contrib.admin',
@@ -69,7 +72,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Django Browser reload
     'django_browser_reload.middleware.BrowserReloadMiddleware',
+
+    # Django translations
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'polarized.urls'
@@ -224,3 +232,12 @@ if not GOOGLE_OAUTH_CLIENT_ID:
 # We need these lines below to allow the Google sign in popup to work.
 SECURE_REFERRER_POLICY = 'no-referrer-when-downgrade'
 SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
+
+# Django Modeltranslation
+gettext = lambda s: s
+LANGUAGES = (
+    ('en', gettext('English')),
+    ('es', gettext('Spanish')),
+    ('fr', gettext('French')),
+    ('de', gettext('German')),
+)
