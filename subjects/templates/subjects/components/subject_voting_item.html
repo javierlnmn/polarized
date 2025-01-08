@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load subject_tags %}
 
 <div id="subject-voting-{{ subject.id }}" class="relative {% if not subject|user_voted:request.user %}animation-fade-in{% else %}animation-fade-in-come-up{% endif %} h-32 max-md:h-28 max-sm:h-20 w-full rounded-md bg-gradient-to-r from-red-500 dark:from-red-600 to-sky-500 dark:to-sky-600 p-1">
@@ -32,7 +33,7 @@
             class="absolute top-1/2 -translate-y-1/2 left-6 {% if not subject|user_voted:request.user %}text-gray-700 dark:text-white{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
             {% if not subject|user_voted:request.user %}
-                <p>Left</p>
+                <p>{% trans "Left" %}</p>
             {% else %}
                 <p><span x-data="animatedCounter({{ subject.result.left|floatformat:2 }}, 100, 0)" x-init="updateCounter" x-text="Math.round(current)"></span><span class="text-3xl max-sm:text-2xl">%</span></p>
             {% endif %}
@@ -61,7 +62,7 @@
             class="absolute top-1/2 -translate-y-1/2 right-6 {% if not subject|user_voted:request.user %}text-gray-700 dark:text-white{% else %}text-white{% endif %} text-4xl max-sm:text-3xl hover:scale-110 transition-all duration-300 cursor-pointer"
         >
         {% if not subject|user_voted:request.user %}
-            <p>Right</p>
+            <p>{% trans "Right" %}</p>
         {% else %}
             <p><span x-data="animatedCounter({{ subject.result.right|floatformat:2 }}, 100, 0)" x-init="updateCounter" x-text="Math.round(current)"></span><span class="text-3xl max-sm:text-2xl">%</span></p>
         {% endif %}

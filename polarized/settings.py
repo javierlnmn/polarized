@@ -241,3 +241,8 @@ LANGUAGES = (
     ('fr', gettext('French')),
     ('de', gettext('German')),
 )
+
+# Django translations
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]

@@ -5,22 +5,22 @@
     <div class="flex gap-3 items-center justify-end cursor-pointer" x-on:click="openLanguageSelector = !openLanguageSelector" x-on:keydown.escape.window="openLanguageSelector = false">
         <div class="h-6 w-6 aspect-1 rounded-full overflow-hidden shadow-sm">
             {% get_current_language as language_code %}
-            <img src="{% static 'images/languages/'|add:language_code|add:'.svg' %}" alt="Language flag" />
+            <img src="{% static 'images/languages/'|add:language_code|add:'.svg' %}" alt="{% trans "Language flag" %}" />
         </div>
     </div>
     
     <div x-show="openLanguageSelector" x-transition x-transition.duration.250ms class="absolute right-0 top-8 p-3 w-max bg-white dark:bg-gray-800 shadow-lg rounded-md grid grid-cols-3 gap-3">
         <button hx-post="{% url 'common:set_language' %}" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' hx-vals='{ "language": "en"}' hx-target="body" hx-swap="outerHTML" class="h-6 w-6 aspect-1 rounded-full overflow-hidden shadow-sm">
-            <img src="{% static 'images/languages/en.svg' %}" alt="English" />
+            <img src="{% static 'images/languages/en.svg' %}" alt="{% trans 'English' %}" />
         </button>
         <button hx-post="{% url 'common:set_language' %}" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' hx-vals='{ "language": "es"}' hx-target="body" hx-swap="outerHTML" class="h-6 w-6 aspect-1 rounded-full overflow-hidden shadow-sm">
-            <img src="{% static 'images/languages/es.svg' %}" alt="Spanish" />
+            <img src="{% static 'images/languages/es.svg' %}" alt="{% trans 'Spanish' %}" />
         </button>
         <button hx-post="{% url 'common:set_language' %}" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' hx-vals='{ "language": "fr"}' hx-target="body" hx-swap="outerHTML" class="h-6 w-6 aspect-1 rounded-full overflow-hidden shadow-sm">
-            <img src="{% static 'images/languages/fr.svg' %}" alt="French" />
+            <img src="{% static 'images/languages/fr.svg' %}" alt="{% trans 'French' %}" />
         </button>
         <button hx-post="{% url 'common:set_language' %}" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' hx-vals='{ "language": "de"}' hx-target="body" hx-swap="outerHTML" class="h-6 w-6 aspect-1 rounded-full overflow-hidden shadow-sm">
-            <img src="{% static 'images/languages/de.svg' %}" alt="German" />
+            <img src="{% static 'images/languages/de.svg' %}" alt="{% trans 'German' %}" />
         </button>
     </div>
 

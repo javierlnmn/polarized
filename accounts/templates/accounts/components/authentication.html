@@ -1,3 +1,5 @@
+{% load i18n %}
+
 {% if not request.user.is_authenticated %}
     {% include 'accounts/components/google_sign_in_button.html' %}
 {% else %}
@@ -14,7 +16,7 @@
         <form class="mt-3" method="POST" action="{% url 'accounts:logout' %}">
             {% csrf_token %}
             <button type="submit" class="bg-red-500 dark:bg-red-600 hover:bg-red-600 transition-colors text-white rounded-full px-2 py-1 w-full">
-                Logout
+                {% trans "Logout" %}
             </button>
         </form>
     </div>

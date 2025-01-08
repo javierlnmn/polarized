@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-08 12:25+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: accounts/templates/accounts/components/authentication.html:19
+msgid "Logout"
+msgstr ""
+
+#: accounts/templates/accounts/components/sign_in_modal.html:7
+msgid "Welcome to"
+msgstr ""
+
+#: accounts/templates/accounts/components/sign_in_modal.html:7
+#: common/templates/common/base/footer.html:3
+#: common/templates/common/base/header.html:6
+msgid "Polar"
+msgstr ""
+
+#: accounts/templates/accounts/components/sign_in_modal.html:7
+#: common/templates/common/base/footer.html:3
+#: common/templates/common/base/header.html:6
+msgid "ized!"
+msgstr ""
+
+#: accounts/templates/accounts/components/sign_in_modal.html:8
+msgid "You need to log in with Google to be able to vote!"
+msgstr ""
+
+#: common/templates/common/base/footer.html:5
+msgid "Polarized, getting us together."
+msgstr ""
+
+#: common/templates/common/components/set_language.html:8
+msgid "Language flag"
+msgstr ""
+
+#: common/templates/common/components/set_language.html:14
+#: polarized/settings.py:239
+msgid "English"
+msgstr ""
+
+#: common/templates/common/components/set_language.html:17
+#: polarized/settings.py:240
+msgid "Spanish"
+msgstr ""
+
+#: common/templates/common/components/set_language.html:20
+#: polarized/settings.py:241
+msgid "French"
+msgstr ""
+
+#: common/templates/common/components/set_language.html:23
+#: polarized/settings.py:242
+msgid "German"
+msgstr ""
+
+#: subjects/models.py:61
+msgid "Left winged"
+msgstr ""
+
+#: subjects/models.py:62
+msgid "Right winged"
+msgstr ""
+
+#: subjects/templates/subjects/components/subject_voting_item.html:36
+msgid "Left"
+msgstr ""
+
+#: subjects/templates/subjects/components/subject_voting_item.html:65
+msgid "Right"
+msgstr ""
