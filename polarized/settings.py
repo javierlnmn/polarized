@@ -52,6 +52,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Whitenoise
+    'whitenoise.runserver_nostatic',
     
     # Tailwind
     'tailwind',
@@ -72,6 +75,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Whitenoise
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 
     # Django Browser reload
     'django_browser_reload.middleware.BrowserReloadMiddleware',
@@ -164,6 +170,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',  # Global static folder in the project root
 ]
+
+# Static root to collect static files in
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Whitenoise configuration
+STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Media files
 MEDIA_URL = '/media/'
