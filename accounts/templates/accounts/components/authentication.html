@@ -6,7 +6,7 @@
 
 <div x-data="{ openProfile: false }">
     <div class="flex gap-3 items-center justify-end cursor-pointer" x-on:click="openProfile = !openProfile" x-on:keydown.escape.window="openProfile = false">
-        <img class="h-10 aspect-1 rounded-full overflow-hidden shadow-sm" src="{{ request.user.profile_picture_url }}" alt="User's profile picture">
+        <img class="h-7 aspect-1 rounded-full overflow-hidden shadow-sm" src="{{ request.user.profile_picture_url }}" alt="User's profile picture">
         <p class="text-gray-700 dark:text-white underline select-none max-md:hidden">{{ request.user.username }}</p>
     </div>
     
