@@ -28,12 +28,15 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
+    "polarized-91tl.onrender.com",
 ]
 
 INTERNAL_IPS = [
-    "127.0.0.1",
+    "polarized-91tl.onrender.com",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://polarized-91tl.onrender.com'
 ]
 
 # Application definition
@@ -59,7 +62,7 @@ INSTALLED_APPS = [
     # Tailwind
     'tailwind',
     'theme',
-    'django_browser_reload',
+    # 'django_browser_reload',
     
     # Other apps
     'common',
