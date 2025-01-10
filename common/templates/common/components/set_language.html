@@ -22,7 +22,7 @@
         <button hx-post="{% url 'common:set_language' %}" hx-indicator="#loading-overlay" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' hx-vals='{ "language": "de"}' hx-target="body" hx-swap="outerHTML" class="h-6 w-6 aspect-1 rounded-full overflow-hidden shadow-sm">
             <img src="{% static 'images/languages/de.svg' %}" alt="{% trans 'German' %}" />
         </button>
-        <div id="loading-overlay" class="absolute top-0 left-0 w-full h-full rounded-md bg bg-gray-900/50 hidden [&.htmx-request]:grid place-items-center">
+        <div id="loading-overlay" class="absolute top-0 left-0 w-full h-full rounded-md dark:!text-gray-200 !text-gray-600 bg-gray-400/30 dark:bg-gray-900/50 hidden [&.htmx-request]:grid place-items-center">
             {% include 'common/components/loading_throbber.html' %}
         </div>
     </div>
