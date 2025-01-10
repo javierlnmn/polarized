@@ -6,8 +6,9 @@
     {% if subject|user_voted:request.user %}
         <span
             class="absolute z-10 -top-2 -right-2"
-            hx-delete="{% url 'subjects:subject_vote' subject.id %}" 
-            hx-target="#subject-voting-{{ subject.id }}" 
+            hx-delete="{% url 'subjects:subject_vote' subject.id %}"
+            hx-indicator="#loading-overlay-{{subject.id}}"
+            hx-target="#subject-voting-{{ subject.id }}"
             hx-swap="outerHTML"
             hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
         >
@@ -23,6 +24,7 @@
         <span
             {% if not subject|user_voted:request.user and request.user.is_authenticated %}
                 hx-post="{% url 'subjects:subject_vote' subject.id %}" 
+                hx-indicator="#loading-overlay-{{subject.id}}"
                 hx-vals='{"value": -1}' 
                 hx-target="#subject-voting-{{ subject.id }}" 
                 hx-swap="outerHTML"
@@ -52,6 +54,7 @@
         <span
             {% if not subject|user_voted:request.user and request.user.is_authenticated %}
                 hx-post="{% url 'subjects:subject_vote' subject.id %}" 
+                hx-indicator="#loading-overlay-{{subject.id}}"
                 hx-vals='{"value": 1}' 
                 hx-target="#subject-voting-{{ subject.id }}" 
                 hx-swap="outerHTML"
@@ -67,6 +70,10 @@
             <p><span x-data="animatedCounter({{ subject.result.right|floatformat:2 }}, 100, 0)" x-init="updateCounter" x-text="Math.round(current)"></span><span class="text-3xl max-sm:text-2xl">%</span></p>
         {% endif %}
         </span>
+    </div>
+
+    <div id="loading-overlay-{{subject.id}}" class="absolute top-0 left-0 w-full h-full rounded-md bg bg-gray-900/50 hidden [&.htmx-request]:!grid place-items-center">
+        {% include 'common/components/loading_throbber.html' %}
     </div>
 
 </div>
