@@ -35,6 +35,10 @@ INTERNAL_IPS = [
     "polarized-91tl.onrender.com",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://polarized-91tl.onrender.com'
+]
+
 # Application definition
 INSTALLED_APPS = [
     # JET admin
