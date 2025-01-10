@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-08 12:25+0000\n"
+"POT-Creation-Date: 2025-01-10 11:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,19 +23,23 @@ msgstr ""
 msgid "Logout"
 msgstr "Cerrar sesión"
 
+#: accounts/templates/accounts/components/google_sign_in_button.html:12
+msgid "Sign in with Google"
+msgstr "Iniciar sesión con Google"
+
 #: accounts/templates/accounts/components/sign_in_modal.html:7
 msgid "Welcome to"
 msgstr "Bienvenido a"
 
 #: accounts/templates/accounts/components/sign_in_modal.html:7
-#: common/templates/common/base/footer.html:3
-#: common/templates/common/base/header.html:6
+#: common/templates/common/base/footer.html:5
+#: common/templates/common/base/header.html:8
 msgid "Polar"
 msgstr "Polar"
 
 #: accounts/templates/accounts/components/sign_in_modal.html:7
-#: common/templates/common/base/footer.html:3
-#: common/templates/common/base/header.html:6
+#: common/templates/common/base/footer.html:5
+#: common/templates/common/base/header.html:8
 msgid "ized!"
 msgstr "izados!"
 
@@ -43,7 +47,7 @@ msgstr "izados!"
 msgid "You need to log in with Google to be able to vote!"
 msgstr "¡Necesitas iniciar sesión con Google para poder votar!"
 
-#: common/templates/common/base/footer.html:5
+#: common/templates/common/base/footer.html:7
 msgid "Polarized, getting us together."
 msgstr "Polarizados, uniendo a las personas."
 
@@ -79,10 +83,10 @@ msgstr "Izquierda"
 msgid "Right winged"
 msgstr "Derecha"
 
-#: subjects/templates/subjects/components/subject_voting_item.html:36
+#: subjects/templates/subjects/components/subject_voting_item.html:38
 msgid "Left"
 msgstr "Izquierdas"
 
-#: subjects/templates/subjects/components/subject_voting_item.html:65
+#: subjects/templates/subjects/components/subject_voting_item.html:68
 msgid "Right"
 msgstr "Derechas"
