@@ -28,15 +28,15 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = [
-    "polarized-91tl.onrender.com",
+    "polarized-1wcq.onrender.com",
 ]
 
 INTERNAL_IPS = [
-    "polarized-91tl.onrender.com",
+    "polarized-1wcq.onrender.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://polarized-91tl.onrender.com'
+    'https://polarized-1wcq.onrender.com'
 ]
 
 # Application definition
