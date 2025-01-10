@@ -2,6 +2,15 @@
 <script src="https://accounts.google.com/gsi/client"></script>
 
 <script>
+    const googleSignInButtons = document.querySelectorAll('[data-google-sign-in-button]');
+    googleSignInButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelector('.g_id_signin div[role=button]').click();
+        });
+    })
+</script>
+
+<script>
     function animatedCounter(target, time = 200, start = 0) {
         return {
             current: start,
