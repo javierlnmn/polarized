@@ -1,7 +1,7 @@
 {% load i18n %}
 
 {% if not request.user.is_authenticated %}
-    {% include 'accounts/components/google_sign_in_button_responsive.html' %}
+    {% include 'accounts/components/google_sign_in_button.html' %}
 {% else %}
 
 <div x-data="{ openProfile: false }">
