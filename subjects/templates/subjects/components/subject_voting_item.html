@@ -37,7 +37,7 @@
             {% if not subject|user_voted:request.user %}
                 <p>{% trans "Left" %}</p>
             {% else %}
-                <p><span x-data="animatedCounter({{ subject.result.left|floatformat:2 }}, 100, 0)" x-init="updateCounter" x-text="Math.round(current)"></span><span class="text-3xl max-sm:text-2xl">%</span></p>
+                <p><span x-data="animatedCounter({{ subject.result.left|floatformat:0 }}, 100, 0)" x-init="updateCounter" x-text="Math.round(current)"></span><span class="text-3xl max-sm:text-2xl">%</span></p>
             {% endif %}
         </span>
 
@@ -67,7 +67,7 @@
         {% if not subject|user_voted:request.user %}
             <p>{% trans "Right" %}</p>
         {% else %}
-            <p><span x-data="animatedCounter({{ subject.result.right|floatformat:2 }}, 100, 0)" x-init="updateCounter" x-text="Math.round(current)"></span><span class="text-3xl max-sm:text-2xl">%</span></p>
+            <p><span x-data="animatedCounter({{ subject.result.right|floatformat:0 }}, 100, 0)" x-init="updateCounter" x-text="Math.round(current)"></span><span class="text-3xl max-sm:text-2xl">%</span></p>
         {% endif %}
         </span>
     </div>
