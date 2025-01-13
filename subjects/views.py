@@ -9,7 +9,7 @@ class SubjectListView(ListView):
     model = Subject
     template_name = 'subjects/subjects_list.html'
     paginate_by = 5
-    ordering = '-created_at'
+    ordering = ('-created_at', 'id')
 
 
 class VotingView(View):
