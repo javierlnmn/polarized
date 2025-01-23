@@ -1,6 +1,7 @@
 asgiref==3.8.1
 cachetools==5.5.0
 certifi==2024.12.14
+channels==4.2.0
 charset-normalizer==3.4.1
 Django==5.0.6
 django-4-jet==1.0.9
@@ -14,6 +15,7 @@ google-auth-httplib2==0.2.0
 googleapis-common-protos==1.66.0
 httplib2==0.22.0
 idna==3.10
+mysqlclient==2.2.6
 proto-plus==1.25.0
 protobuf==5.29.2
 pyasn1==0.6.1
