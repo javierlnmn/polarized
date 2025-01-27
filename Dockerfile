@@ -11,9 +11,8 @@ RUN apt-get update && apt-get install -y \
     npm \
     && rm -rf /var/lib/apt/lists/
 
-COPY . /app
+COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
-RUN python manage.py tailwind install
 
-COPY . /app/
+RUN python manage.py tailwind install
