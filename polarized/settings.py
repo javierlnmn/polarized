@@ -10,22 +10,24 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
+from shutil import which
+
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load environment variables from .env
-load_dotenv(os.path.join(BASE_DIR, '.env'))
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = os.getenv('DEBUG') == 'True'
+DEBUG = os.getenv("DEBUG") == "True"
 
 ALLOWED_HOSTS = [
     "*",
@@ -38,67 +40,61 @@ INTERNAL_IPS = [
 # Application definition
 INSTALLED_APPS = [
     # JET admin
-    'jet.dashboard',
-    'jet',
-
+    "jet.dashboard",
+    "jet",
     # Django Modeltranslation
-    'modeltranslation',
-    
+    "modeltranslation",
     # Django
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
     # Tailwind
-    'tailwind',
-    'theme',
-    'django_browser_reload',
-    
+    "tailwind",
+    "theme",
+    "django_browser_reload",
     # Other apps
-    'common',
-    'accounts',
-    'subjects',
+    "common",
+    "accounts",
+    "subjects",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # Django Browser reload
-    'django_browser_reload.middleware.BrowserReloadMiddleware',
-
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
     # Django translations
-    'django.middleware.locale.LocaleMiddleware',
+    "django.middleware.locale.LocaleMiddleware",
 ]
 
-ROOT_URLCONF = 'polarized.urls'
+ROOT_URLCONF = "polarized.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'common.context_processors.settings',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+                "common.context_processors.settings",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'polarized.wsgi.application'
+WSGI_APPLICATION = "polarized.wsgi.application"
 
 
 # Database
@@ -110,13 +106,13 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
     # Other DB connections
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('MYSQL_DATABASE'),
-        'USER': os.getenv('MYSQL_USER'),
-        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
-        'HOST': os.getenv('MYSQL_HOST'),
-        'PORT': os.getenv('MYSQL_PORT'),
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": os.getenv("MYSQL_DATABASE"),
+        "USER": os.getenv("MYSQL_USER"),
+        "PASSWORD": os.getenv("MYSQL_PASSWORD"),
+        "HOST": os.getenv("MYSQL_HOST"),
+        "PORT": os.getenv("MYSQL_PORT"),
     }
 }
 
@@ -126,27 +122,27 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
-AUTH_USER_MODEL = 'accounts.CustomUser'
+AUTH_USER_MODEL = "accounts.CustomUser"
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -157,61 +153,37 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 # URL to use when referring to static files in templates
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
 # Directories Django will search for static files, in addition to each app's 'static/' folder
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Global static folder in the project root
+    BASE_DIR / "static",  # Global static folder in the project root
 ]
 
 # Media files
-MEDIA_URL = '/media/'
+MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Tailwind
-TAILWIND_APP_NAME = 'theme'
+TAILWIND_APP_NAME = "theme"
 
-from shutil import which
+
 NPM_BIN_PATH = which("npm")
 
 # Jet
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 JET_THEMES = [
-    {
-        'theme': 'default',
-        'color': '#47bac1',
-        'title': 'Default'
-    },
-    {
-        'theme': 'green',
-        'color': '#44b78b',
-        'title': 'Green'
-    },
-    {
-        'theme': 'light-green',
-        'color': '#2faa60',
-        'title': 'Light Green'
-    },
-    {
-        'theme': 'light-violet',
-        'color': '#a464c4',
-        'title': 'Light Violet'
-    },
-    {
-        'theme': 'light-blue',
-        'color': '#5EADDE',
-        'title': 'Light Blue'
-    },
-    {
-        'theme': 'light-gray',
-        'color': '#222',
-        'title': 'Light Gray'
-    }
+    {"theme": "default", "color": "#47bac1", "title": "Default"},
+    {"theme": "green", "color": "#44b78b", "title": "Green"},
+    {"theme": "light-green", "color": "#2faa60", "title": "Light Green"},
+    {"theme": "light-violet", "color": "#a464c4", "title": "Light Violet"},
+    {"theme": "light-blue", "color": "#5EADDE", "title": "Light Blue"},
+    {"theme": "light-gray", "color": "#222", "title": "Light Gray"},
 ]
 
 
@@ -223,25 +195,24 @@ LOGOUT_URL = "accounts:logout"
 
 
 # Google OAuth settings
-GOOGLE_OAUTH_CLIENT_ID = os.getenv('GOOGLE_OAUTH_CLIENT_ID')
+GOOGLE_OAUTH_CLIENT_ID = os.getenv("GOOGLE_OAUTH_CLIENT_ID")
 if not GOOGLE_OAUTH_CLIENT_ID:
-    raise ValueError(
-        'GOOGLE_OAUTH_CLIENT_ID is missing.\nIs it registered as an environment variable?'
-    )
+    raise ValueError("GOOGLE_OAUTH_CLIENT_ID is missing.\nIs it registered as an environment variable?")
 # We need these lines below to allow the Google sign in popup to work.
-SECURE_REFERRER_POLICY = 'no-referrer-when-downgrade'
+SECURE_REFERRER_POLICY = "no-referrer-when-downgrade"
 SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
 
 # Django Modeltranslation
-gettext = lambda s: s
+gettext = lambda s: s  # noqa: E731
 LANGUAGES = (
-    ('en', gettext('English')),
-    ('es', gettext('Spanish')),
-    ('fr', gettext('French')),
-    ('de', gettext('German')),
+    ("en", gettext("English")),
+    ("es", gettext("Spanish")),
+    ("fr", gettext("French")),
+    ("de", gettext("German")),
 )
+
 
 # Django translations
 LOCALE_PATHS = [
-    BASE_DIR / 'locale',
+    BASE_DIR / "locale",
 ]

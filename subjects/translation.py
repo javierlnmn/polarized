@@ -1,8 +1,10 @@
-from modeltranslation.translator import translator, TranslationOptions
+from modeltranslation.translator import TranslationOptions, translator
+
 from .models import Subject
 
 
 class SubjectTranslationOptions(TranslationOptions):
-    fields = ('name', 'description')
+    fields = ("name", "description")
+
 
 translator.register(Subject, SubjectTranslationOptions)
