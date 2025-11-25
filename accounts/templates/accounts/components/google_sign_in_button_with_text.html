@@ -1,10 +1,10 @@
 {% load i18n %}
 <div class="animation-fade-in">
      <div id="g_id_onload"
-          data-client_id="202521185354-ikmhrun7l7cr4fi5l646baj1tlued2ip.apps.googleusercontent.com"
+          data-client_id="{{ google_oauth_client_id }}"
           data-context="signin"
           data-ux_mode="popup"
-          data-login_uri="http://localhost:8000/accounts/auth/google/reciever/"
+          data-login_uri="{% url 'accounts:google_auth_receiver' %}"
           data-auto_prompt="false">
      </div>
 

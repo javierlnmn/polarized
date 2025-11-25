@@ -29,13 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = os.getenv("DEBUG") == "True"
 
-ALLOWED_HOSTS = [
-    "*",
-]
-
-INTERNAL_IPS = [
-    "*",
-]
+ALLOWED_HOSTS = [host.strip() for host in os.getenv("ALLOWED_HOSTS").split(",") if host.strip()]
 
 # Application definition
 INSTALLED_APPS = [
@@ -88,7 +82,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "common.context_processors.settings",
+                "common.context_processors.site_settings",
             ],
         },
     },
@@ -170,8 +164,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Tailwind
 TAILWIND_APP_NAME = "theme"
-
-
 NPM_BIN_PATH = which("npm")
 
 # Jet
