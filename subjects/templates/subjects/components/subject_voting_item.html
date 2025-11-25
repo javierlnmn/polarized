@@ -1,7 +1,22 @@
 {% load i18n %}
 {% load subject_tags %}
-
-<div id="subject-voting-{{ subject.id }}" class="relative {% if not subject|user_voted:request.user %}animation-fade-in{% else %}animation-fade-in-come-up{% endif %} h-32 max-md:h-28 max-sm:h-20 w-full rounded-md bg-gradient-to-r from-red-500 dark:from-red-600 to-sky-500 dark:to-sky-600 p-1">
+<div
+    id="subject-voting-{{ subject.id }}"
+    class="
+        relative
+        {% if not subject|user_voted:request.user %}
+            animation-fade-in
+        {% else %}
+            animation-fade-in-come-up
+        {% endif %}
+        h-32 max-md:h-28 max-sm:h-20 w-full rounded-md bg-gradient-to-r from-red-500 dark:from-red-600 to-sky-500 dark:to-sky-600 p-1 transition-colors duration-500
+    "
+    :class="tieColor ? '!from-green-500 dark:!from-green-600 !to-green-500 dark:!to-green-600' : ''"
+    x-data="{ tieColor: false }"
+    {% if subject.result.result == 'tie' %}
+    x-intersect="setTimeout(() => { tieColor = true }, 1200)"
+    {% endif %}
+>
 
     {% if subject|user_voted:request.user %}
         <span
@@ -42,12 +57,20 @@
         </span>
 
         {% if subject|user_voted:request.user %}
-            <div class="place-self-start h-full flex flex-col" style="width: {{subject.result.left|floatformat:0}}%">
-                <div class="animation-width place-self-start h-full bg-red-500 dark:bg-red-600"></div>
+            <div class="place-self-start h-full flex flex-col" style="width: {{subject.result.left|floatformat:0}}%" x-clas>
+                <div
+                    class="animation-width place-self-start h-full bg-red-500 dark:bg-red-600 transition-colors duration-500"
+                    :class="tieColor ? '!bg-green-500 dark:!bg-green-600' : ''"
+                >
+                </div>
             </div>
 
             <div class="place-self-end h-full flex flex-col" style="width: {{subject.result.right|floatformat:0}}%">
-                <div class="animation-width place-self-end h-full bg-sky-500 dark:bg-sky-600"></div>
+                <div
+                    class="animation-width place-self-end h-full bg-sky-500 dark:bg-sky-600 transition-colors duration-500"
+                    :class="tieColor ? '!bg-green-500 dark:!bg-green-600' : ''"
+                >
+                </div>
             </div>
         {% endif %}
 
