@@ -6,32 +6,14 @@ x-app: &default-app
     - .env
 
 services:
-  mysql_db:
-    image: mysql:8.0
-    volumes:
-      - mysql_data:/var/lib/mysql
-    env_file:
-      - .env
-    ports:
-      - "3306:3306"
-    healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
-      timeout: 5s
-      retries: 10
 
   web:
     <<: *default-app
     command: sh -c "poetry run python manage.py migrate && poetry run gunicorn polarized.wsgi:application --bind 0.0.0.0:8000"
     ports:
       - "8000:8000"
-    depends_on:
-      mysql_db:
-        condition: service_healthy
     volumes:
       - static_data:/data/app/staticfiles
-    links:
-      - mysql_db
 
 volumes:
-  mysql_data:
   static_data:
