@@ -21,7 +21,7 @@ services:
 
   web:
     <<: *default-app
-    command: "python manage.py runserver 0.0.0.0:8000"
+    command: "poetry run python manage.py runserver 0.0.0.0:8000"
     ports:
       - "8000:8000"
     depends_on:
@@ -32,7 +32,7 @@ services:
 
   tailwind:
     <<: *default-app
-    command: "python manage.py tailwind start"
+    command: "poetry run python manage.py tailwind start"
     tty: true
     depends_on:
       - web
