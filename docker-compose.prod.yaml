@@ -2,8 +2,6 @@ x-app: &default-app
   build:
     context: .
     dockerfile: Dockerfile.prod
-  volumes:
-    - .:/data/app
   env_file:
     - .env
 
@@ -29,8 +27,11 @@ services:
     depends_on:
       mysql_db:
         condition: service_healthy
+    volumes:
+      - static_data:/data/app/staticfiles
     links:
       - mysql_db
 
 volumes:
   mysql_data:
+  static_data:
