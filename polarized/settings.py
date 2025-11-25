@@ -67,6 +67,8 @@ MIDDLEWARE = [
     "django_browser_reload.middleware.BrowserReloadMiddleware",
     # Django translations
     "django.middleware.locale.LocaleMiddleware",
+    # Whitenoise
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "polarized.urls"
@@ -150,9 +152,13 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 # Directories Django will search for static files, in addition to each app's 'static/' folder
+# This is used to serve static files during DEVELOPMENT
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # Global static folder in the project root
 ]
+
+# This is used to serve static files during PRODUCTION
+STATIC_ROOT = BASE_DIR / "staticfiles"  # Collect static files into this directory
 
 # Media files
 MEDIA_URL = "/media/"

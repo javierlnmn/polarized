@@ -1,5 +1,8 @@
-x-app: &default-app
-  build: .
+x-app: &default-
+  build:
+    context: .
+    dockerfile: Dockerfile.prod
+  context: .
   volumes:
     - .:/data/app
   env_file:
