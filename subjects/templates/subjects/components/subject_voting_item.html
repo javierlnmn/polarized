@@ -13,7 +13,7 @@
     "
     :class="tieColor ? '!from-green-500 dark:!from-green-600 !to-green-500 dark:!to-green-600' : ''"
     x-data="{ tieColor: false }"
-    {% if subject.result.result == 'tie' %}
+    {% if subject.result.result == SubjectResultType.TIE and request.user.is_authenticated %}
     x-intersect="setTimeout(() => { tieColor = true }, 1200)"
     {% endif %}
 >
