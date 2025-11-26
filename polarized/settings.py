@@ -31,9 +31,10 @@ DEBUG = os.getenv("DEBUG") == "True"
 
 ALLOWED_HOSTS = [host.strip() for host in os.getenv("ALLOWED_HOSTS").split(",") if host.strip()]
 
-CSRF_TRUSTED_ORIGINS = [
-    origin.strip() for origin in os.getenv("CSRF_TRUSTED_ORIGINS").split(",") if origin.strip()
-]
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = [
+        origin.strip() for origin in os.getenv("CSRF_TRUSTED_ORIGINS").split(",") if origin.strip()
+    ]
 
 # Application definition
 INSTALLED_APPS = [
@@ -89,6 +90,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "common.context_processors.site_settings",
+                "subjects.context_processors.subject_result_choices",
             ],
         },
     },
