@@ -4,6 +4,12 @@ from django.utils.translation import gettext_lazy as _
 from accounts.models import CustomUser
 
 
+class SubjectResult(models.TextChoices):
+    LEFT = "left", _("Left")
+    RIGHT = "right", _("Right")
+    TIE = "tie", _("Tie")
+
+
 class Subject(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=500, null=True, blank=True)
@@ -15,9 +21,7 @@ class Subject(models.Model):
         total_votes = self.total_votes
 
         if total_votes == 0:
-            return {
-                'result': None
-            }
+            return {"result": None}
 
         left_votes = self.votes.filter(value=-1).count()
         right_votes = self.votes.filter(value=1).count()
@@ -29,16 +33,16 @@ class Subject(models.Model):
             left_percentage = right_percentage = 0
 
         if left_percentage > right_percentage:
-            result = 'left'
+            result = SubjectResult.LEFT
         elif right_percentage > left_percentage:
-            result = 'right'
+            result = SubjectResult.RIGHT
         else:
-            result = 'tie'
+            result = SubjectResult.TIE
 
         return {
-            'left': left_percentage,
-            'right': right_percentage,
-            'result': result,
+            "left": left_percentage,
+            "right": right_percentage,
+            "result": result,
         }
 
     @property
@@ -56,19 +60,21 @@ class Subject(models.Model):
 
 
 class Vote(models.Model):
-
     class VoteChoices(models.IntegerChoices):
-        LEFT = -1, _('Left winged')
-        RIGHT = 1, _('Right winged')
+        LEFT = -1, _("Left winged")
+        RIGHT = 1, _("Right winged")
 
-    subject = models.ForeignKey(Subject, related_name='votes', on_delete=models.CASCADE)
-    user = models.ForeignKey(CustomUser, related_name='votes', on_delete=models.CASCADE)
+    subject = models.ForeignKey(Subject, related_name="votes", on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, related_name="votes", on_delete=models.CASCADE)
     value = models.IntegerField(choices=VoteChoices)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.user.username} voted {self.value} for {self.subject.name}'
+        return f"{self.user.username} voted {self.value} for {self.subject.name}"
 
     class Meta:
-        unique_together = ('subject', 'user',)
+        unique_together = (
+            "subject",
+            "user",
+        )
